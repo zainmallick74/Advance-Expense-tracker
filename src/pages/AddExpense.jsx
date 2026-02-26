@@ -1,4 +1,4 @@
-import ExpenseForm from "../components/EpenseForm";
+import ExpenseForm from "../components/ExpenseForm";
 
 function AddExpense({onAddExpense}) {
   return(

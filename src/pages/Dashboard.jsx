@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import CategorySummary from "../components/categorySummary";
+import CategorySummary from "../components/CategorySummary";
 
 function Dashboard({expenses}) {
 
