@@ -9,7 +9,7 @@ function ExpenseList({expenses, onDelete}) {
 
   return(
     <div className="mt-10 px-4">
-      <h2 className="text-2xl font-semibold text-gray-700 text-center mb-6">All Epenses </h2>
+      <h2 className="text-2xl font-semibold text-gray-700 text-center mb-6">All Expenses </h2>
       { expenses.map((item) => (
         <div 
         key={item.id}

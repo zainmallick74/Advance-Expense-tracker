@@ -11,7 +11,6 @@ function App() {
   const [expenses , setExpenses] =useState([]);
   const navigate= useNavigate();
 
-  //Load data when App starts
   useEffect(()=> {
     const savedExpenses = localStorage.getItem("expenses");
 
@@ -19,8 +18,6 @@ function App() {
         setExpenses(JSON.parse(savedExpenses));
       }
   },[]);
-
-  //save data whenever expeses changes:
 
   useEffect(()=> {
     localStorage.setItem("expenses",JSON.stringify(expenses));
@@ -40,7 +37,6 @@ function App() {
           item.id === updatedExpense.id?
           updatedExpense : item
         )
-
       );
   }
 
@@ -49,12 +45,12 @@ function App() {
 
     <div className=" mx-auto flex justify-between items-center px-8 py-4  bg-gray-100">
     
-    {/* Logo / App Name */}
+    
     <h1 className="text-xl font-bold text-gray-800 tracking-wide">
       Expense Tracker
     </h1>
 
-    {/* Navigation Buttons */}
+   
     <div className="flex gap-6">
 
         <button

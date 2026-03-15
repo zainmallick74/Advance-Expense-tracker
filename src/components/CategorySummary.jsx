@@ -1,12 +1,10 @@
 function CategorySummary({ expenses = [] }) {
 
-  // 🔹 1. Total Spent
   const totalSpent = expenses.reduce(
     (sum, item) => sum + Number(item.amount),
     0
   );
 
-  // 🔹 2. Group by Category
   const categoryTotal = expenses.reduce((acc, item) => {
     const category = item.category || "Uncategorized";
 
@@ -19,11 +17,9 @@ function CategorySummary({ expenses = [] }) {
     return acc;
   }, {});
 
-  // 🔹 3. Find Top Category
   const topCategory =
     Object.entries(categoryTotal).sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
 
-  // 🔹 4. Color Map
   const colors = {
     Food: "bg-green-500",
     Travel: "bg-purple-500",
@@ -35,12 +31,11 @@ function CategorySummary({ expenses = [] }) {
   return (
     <div className="min-h-screen bg-gray-100 py-10">
 
-      {/* 🔹 Dashboard Title */}
       <h1 className="text-2xl font-bold text-gray-800 text-center mb-8">
         Dashboard Overview
       </h1>
 
-      {/* 🔹 Summary Cards */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10 px-4">
         
         <div className="bg-white p-6 rounded-2xl shadow-lg">
@@ -65,7 +60,6 @@ function CategorySummary({ expenses = [] }) {
         </div>
       </div>
 
-      {/* 🔹 Category Breakdown Card */}
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-xl mx-auto">
         
         <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-6">

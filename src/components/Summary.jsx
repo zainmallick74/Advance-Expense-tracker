@@ -5,15 +5,13 @@ function Summary({expenses}) {
     return <p className="text-center mt-5 text-3xl">No data Vailable</p>
   }
   
-  //Totl spending
   const totalSpent = expenses.reduce((acc,item)=> {
     return acc+Number(item.amount);
   },0);
 
-  //total transaction 
+ 
   const totalTransaction = expenses.length;
 
-  //average spending
   const average = totalTransaction === 0? 0: totalSpent/totalTransaction;
   
   const highestExpense = expenses.length === 0 ?0 :
